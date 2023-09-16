@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5879069766957576517}
   - component: {fileID: 3961625827096871097}
   - component: {fileID: 6474814077724463102}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Person
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,6 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed62b5221185b4f40beee5fc51b5a8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panicked: 0
+  moveTime: 4
+  speed: 4
 --- !u!95 &5879069766957576517
 Animator:
   serializedVersion: 5
@@ -147,7 +150,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &6474814077724463102
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
