@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdd4888f1571f342b43a8bc3bdae7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
+  speed: 1500
   turnSpeed: 0.5
   attackDist: 16
   projectile: {fileID: 2477569288375028526, guid: 88cf7aba717043c429bdfff1745462f1,
@@ -189,7 +189,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 10
   m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0

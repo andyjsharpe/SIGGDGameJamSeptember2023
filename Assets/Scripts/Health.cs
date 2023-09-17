@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -21,5 +19,10 @@ public class Health : MonoBehaviour
             FindObjectOfType<Heat>().AddHeat(heatValue);
             Destroy(gameObject);
         }
+    }
+
+    public int GetHealth()
+    {
+        return maxHealth;
     }
 }

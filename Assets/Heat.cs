@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -21,15 +19,19 @@ public class Heat : MonoBehaviour
     [SerializeField] private GameObject Swept;
     [SerializeField] private GameObject B52;
     [SerializeField] private GameObject Nuker;
+    
+    [SerializeField] private Slider health;
 
     private AlienControl ac;
     private Transform player;
+    private Health playerHealth;
 
     private void Start()
     {
         ac = FindObjectOfType<AlienControl>();
         player = ac.transform;
         player.position = GetSpawn().position;
+        playerHealth = player.GetComponent<Health>();
         StartCoroutine(nameof(SpawnThings));
     }
 
@@ -125,5 +127,9 @@ public class Heat : MonoBehaviour
     {
         timer.text = "Time Survived: " + Time.time.ToString("F2");
         abductees.text = "People abducted: " + ac.abductees;
+        PlayerPrefs.SetFloat("Time", Time.time);
+        PlayerPrefs.SetInt("Abductees", ac.abductees);
+        PlayerPrefs.SetFloat("Heat", _heat);
+        health.value = playerHealth.GetHealth() / 1000f;
     }
 }

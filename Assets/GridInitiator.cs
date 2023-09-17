@@ -1,9 +1,9 @@
 using Unity.Mathematics;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 using System.Collections.Generic;
+using System.Linq;
 
 public class GridInitiator : MonoBehaviour
 {
@@ -41,16 +41,16 @@ public class GridInitiator : MonoBehaviour
                     tile.GetTileData(pos, tilemap, ref reference);
                     var sprite = reference.sprite;
                     var worldPos = tilemap.CellToWorld(pos);
-                    if (ArrayUtility.Contains(concreteSprites, sprite))
+                    if (concreteSprites.Contains(sprite))
                     {
                         MakeBuilding(worldPos);
-                    } else if (ArrayUtility.Contains(intersectionSprites, sprite))
+                    } else if (intersectionSprites.Contains(sprite))
                     {
                         _intersections.Add(worldPos);
-                    } else if (ArrayUtility.Contains(roadSprites, sprite))
+                    } else if (roadSprites.Contains(sprite))
                     {
                         MakeCar(worldPos);
-                    } else if (ArrayUtility.Contains(waterSprites, sprite))
+                    } else if (waterSprites.Contains(sprite))
                     {
                         //MakeCar(worldPos);
                         

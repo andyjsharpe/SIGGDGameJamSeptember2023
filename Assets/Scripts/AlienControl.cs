@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.Serialization;
 
 public class AlienControl : MonoBehaviour
 {
@@ -94,5 +93,10 @@ public class AlienControl : MonoBehaviour
     {
         var mousePosition = Mouse.current.position.ReadValue();
         return _cam.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, _cam.transform.position.z));
+    }
+
+    private void OnDestroy()
+    {
+        Application.Quit();
     }
 }

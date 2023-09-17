@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Cities/New York.unity
+    path: Assets/New York.unity
     guid: 0bf76d218dc746446aa903bb7fb5106c
   m_configObjects: {}

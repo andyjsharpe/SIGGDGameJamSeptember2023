@@ -41,7 +41,7 @@ public class plane : MonoBehaviour
         {
             TryFire(dir);
             ts /= 2;
-            s *= 10;
+            s *= 2;
         }
 
         _body.AddForce((1 - ratio) * s * Time.deltaTime * transform1.up, ForceMode2D.Force);
