@@ -72,6 +72,7 @@ public class PersonControl : MonoBehaviour
             if (dist < 0.1f)
             {
                 _playerTrans.GetComponent<AlienControl>().abductees += 1;
+                FindObjectOfType<Heat>().AddHeat(0.01f);
                 Destroy(gameObject);
             }
         }

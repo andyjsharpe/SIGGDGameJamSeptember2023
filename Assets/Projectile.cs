@@ -1,3 +1,5 @@
+using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -21,5 +23,10 @@ public class Projectile : MonoBehaviour
             health.Damage(damage);
         }
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(spawnOnHit, transform.position, Quaternion.identity);
     }
 }

@@ -50,14 +50,13 @@ public class GridInitiator : MonoBehaviour
                     } else if (ArrayUtility.Contains(roadSprites, sprite))
                     {
                         MakeCar(worldPos);
+                    } else if (ArrayUtility.Contains(waterSprites, sprite))
+                    {
+                        //MakeCar(worldPos);
+                        
                     }
                 }
             }
-        }
-
-        foreach (var intersection in _intersections)
-        {
-            MakePerson(intersection);
         }
     }
 
@@ -65,6 +64,7 @@ public class GridInitiator : MonoBehaviour
     {
         var g = Instantiate(buildings[Random.Range(0, buildings.Length)], pos + Vector3.up * 0.375f, quaternion.identity, transform);
         _buildings.Add(g);
+        MakePerson(pos);
     }
     
     private void MakeCar(Vector3 pos)

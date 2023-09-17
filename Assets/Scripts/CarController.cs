@@ -11,10 +11,4 @@ public class CarController : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = carSprites[Random.Range(0, carSprites.Length)];
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
