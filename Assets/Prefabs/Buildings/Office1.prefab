@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1174654421854739511}
   - component: {fileID: 2351615979106552600}
   - component: {fileID: 8348641560282083564}
+  - component: {fileID: -2815381087525200020}
+  - component: {fileID: -4455107867377601291}
   m_Layer: 0
   m_Name: Office1
   m_TagString: Untagged
@@ -173,3 +175,36 @@ PolygonCollider2D:
       - {x: 0.3125, y: 0.6875}
       - {x: 0.125, y: 0.875}
   m_UseDelaunayMesh: 0
+--- !u!114 &-2815381087525200020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9043721502471478275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1404ae50f01d84e94d9ce9708f8371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  spawnOnDeath:
+  - {fileID: 830489834897520754, guid: 9a295406b976b35439a0b4e572e2f0f1, type: 3}
+  - {fileID: 830489834897520754, guid: 9a295406b976b35439a0b4e572e2f0f1, type: 3}
+  - {fileID: 830489834897520754, guid: 9a295406b976b35439a0b4e572e2f0f1, type: 3}
+  - {fileID: 830489834897520754, guid: 9a295406b976b35439a0b4e572e2f0f1, type: 3}
+  - {fileID: 830489834897520754, guid: 9a295406b976b35439a0b4e572e2f0f1, type: 3}
+  - {fileID: 830489834897520754, guid: 9a295406b976b35439a0b4e572e2f0f1, type: 3}
+  heatValue: 0.01
+--- !u!114 &-4455107867377601291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9043721502471478275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814dc6b923ef54547a7c20c8eceb6e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

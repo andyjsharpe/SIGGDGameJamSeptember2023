@@ -11,20 +11,23 @@ public class AlienControl : MonoBehaviour
     private Camera _cam;
     [SerializeField] private GameObject projectile;
     private CircleCollider2D _beam;
-    private Light2D _beamLight;
+    [SerializeField] private Light2D beamLight;
 
     private bool _firing = false;
     private bool _abducting = false;
     [SerializeField] private float fireRate;
     private float _shotTime = 0;
-    
+
+    [HideInInspector]
+    public int abductees = 0;
+
     // Start is called before the first frame update
     private void Start()
     {
         _rigid = GetComponent<Rigidbody2D>();
         _cam = GetComponentInChildren<Camera>();
         _beam = GetComponentInChildren<CircleCollider2D>();
-        _beamLight = GetComponentInChildren<Light2D>();
+        beamLight.enabled = false;
     }
 
     // Update is called once per frame
@@ -48,15 +51,16 @@ public class AlienControl : MonoBehaviour
     private void TryFire()
     {
         var newTime = _shotTime + Time.deltaTime;
-        if (newTime < fireRate)
+        if (_shotTime < fireRate)
         {
             _shotTime = newTime;
         }
-        if (_firing)
+        if (_firing && _shotTime > fireRate)
         {
             var mousePos = GetMouseWorldPos();
             var position = transform.position;
-            Instantiate(projectile, position, Quaternion.LookRotation(mousePos - position, Vector3.forward));
+            var dir = mousePos - position;
+            Instantiate(projectile, position + dir.normalized * 1f, Quaternion.LookRotation(dir, Vector3.forward));
             _shotTime -= fireRate;
         }
     }
@@ -64,7 +68,7 @@ public class AlienControl : MonoBehaviour
     public void OnAltFire(InputValue value)
     {
         _abducting = !_abducting;
-        _beamLight.enabled = !_beamLight.enabled ;
+        beamLight.enabled = !beamLight.enabled ;
     }
 
     private void TryAbduct()
@@ -72,6 +76,17 @@ public class AlienControl : MonoBehaviour
         if (_abducting)
         {
             //do abducting
+            Collider2D[] outs = Physics2D.OverlapCapsuleAll((Vector2)transform.position - Vector2.up * 2, new Vector2(1,2), CapsuleDirection2D.Vertical, 0);
+            foreach (var coll in outs)
+            {
+                PersonControl pc = coll.GetComponent<PersonControl>();
+                if (pc is not null)
+                {
+                    pc.abducting = true;
+                    pc.newPos = transform.position;
+                    pc.GetComponent<SpriteRenderer>().sortingOrder = 1;
+                }
+            }
         }
     }
 

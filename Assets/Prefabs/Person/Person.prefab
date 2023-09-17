@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5879069766957576517}
   - component: {fileID: 3961625827096871097}
   - component: {fileID: 6474814077724463102}
+  - component: {fileID: 5749676237414433523}
   m_Layer: 8
   m_Name: Person
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 830489834897520754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.609, y: -1.099, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87,7 +88,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &2299244735321472360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,9 +101,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed62b5221185b4f40beee5fc51b5a8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newPos: {x: 0, y: 0, z: 0}
   panicked: 0
-  moveTime: 4
-  speed: 4
+  moveTime: 1
+  abducting: 0
+  speed: 1
 --- !u!95 &5879069766957576517
 Animator:
   serializedVersion: 5
@@ -166,7 +169,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 871
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -186,3 +189,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.125, y: 0.25}
   m_Direction: 0
+--- !u!114 &5749676237414433523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830489834897520754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1404ae50f01d84e94d9ce9708f8371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  spawnOnDeath:
+  - {fileID: 474161189016911767, guid: 17985a2e085435a4891a273c8e8a1c0c, type: 3}
+  heatValue: 0.01

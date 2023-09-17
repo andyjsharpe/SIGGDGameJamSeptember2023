@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7424462818308418159}
   - component: {fileID: 491280147830005089}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Headlight (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151099252883026275}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4451295705904966855}
   - component: {fileID: 4871791103669440200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Headlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2780169224036411294}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1386299669178193895}
   - component: {fileID: 1529767289557995439}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Headlight (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2945079104965447601}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -259,7 +259,8 @@ GameObject:
   - component: {fileID: 5031348933256497621}
   - component: {fileID: 2190471613066666715}
   - component: {fileID: 4747720781879781101}
-  m_Layer: 0
+  - component: {fileID: -7989061184336218586}
+  m_Layer: 8
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +326,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 336a930eea28d2d46ad8061ee3df8796, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -336,7 +337,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &5031348933256497621
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -352,7 +353,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -389,7 +390,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4926297319104340619}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
   m_Name: 
@@ -408,7 +409,7 @@ MonoBehaviour:
   - {x: 0.125, y: -0.25, z: 0}
   m_ShapePathHash: 1133901077
   m_Mesh: {fileID: 0}
-  m_InstanceId: -359114
+  m_InstanceId: 35908
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.125, y: 0.25, z: 0}
@@ -432,6 +433,22 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0a2ecfdfbe3b2574fbc9826276a48e40, type: 3}
   - {fileID: 21300000, guid: 4dc9ac8dad748a8429634456d495ed29, type: 3}
   - {fileID: 21300000, guid: de8e28ff72f659d4da948e3a5b66a160, type: 3}
+--- !u!114 &-7989061184336218586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4926297319104340619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1404ae50f01d84e94d9ce9708f8371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  spawnOnDeath:
+  - {fileID: 474161189016911767, guid: e3060ff07ae76274b85835dd4c98cac7, type: 3}
+  heatValue: 0.001
 --- !u!1 &7351113319861610318
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8566062303112118813}
   - component: {fileID: 6424789031305590761}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Headlight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +488,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7351113319861610318}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 

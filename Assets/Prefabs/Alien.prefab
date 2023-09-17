@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3972148226767533374}
   - component: {fileID: 1897844721090310711}
   - component: {fileID: 4998205271956689987}
+  - component: {fileID: 516789553052547853}
   m_Layer: 6
   m_Name: Alien
   m_TagString: Untagged
@@ -180,7 +181,7 @@ MonoBehaviour:
   - {x: -0.25774935, y: -0.3155229, z: 0}
   m_ShapePathHash: -1368685706
   m_Mesh: {fileID: 0}
-  m_InstanceId: -2314
+  m_InstanceId: -1310
   m_LocalBounds:
     m_Center: {x: -0.0005989671, y: 0.030127287, z: 0}
     m_Extent: {x: 0.5065096, y: 0.4126482, z: 0}
@@ -196,10 +197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e32b4d1e2478043aaf973c15413b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 100
+  force: 200
   projectile: {fileID: 8863651143278046743, guid: 201f16cb399cdda4382e06347e3bbbba,
     type: 3}
-  fireRate: 0.2
+  beamLight: {fileID: 5157703601705203727}
+  fireRate: 0.1
 --- !u!114 &3972148226767533374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,7 +275,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 503
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -293,6 +295,68 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.0625}
   m_Size: {x: 1, y: 0.75}
   m_Direction: 1
+--- !u!114 &516789553052547853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171501490062349148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.33333334, g: 0.64705884, b: 0.69411767, a: 1}
+  m_Intensity: 0.25
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 000000002da7ab25
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0.0035500228, y: -0.0020999908, z: 0}
+    m_Extent: {x: 0.50525, y: 0.3788, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.25
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.252626, y: -0.06365983, z: 0}
+  - {x: -0.19058567, y: -0.12550333, z: 0}
+  - {x: -0.11887035, y: -0.057090167, z: 0}
+  - {x: -0.1085631, y: 0.04598231, z: 0}
+  - {x: -0.06346296, y: 0.053352594, z: 0}
+  - {x: 0.059788622, y: 0.056289546, z: 0}
+  - {x: 0.10445336, y: 0.04598231, z: 0}
+  - {x: 0.11819636, y: -0.053654417, z: 0}
+  - {x: 0.1972186, y: -0.1223694, z: 0}
+  - {x: 0.25906208, y: -0.067397416, z: 0}
+  - {x: 0.1972186, y: -0.053654417, z: 0}
+  - {x: 0.17660409, y: 0.056289546, z: 0}
+  - {x: 0.11132486, y: 0.118133046, z: 0}
+  - {x: -0.111760326, y: 0.11863182, z: 0}
+  - {x: -0.17040661, y: 0.056289546, z: 0}
+  - {x: -0.1841496, y: -0.053654417, z: 0}
 --- !u!1 &4582917133572705490
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +386,7 @@ Transform:
   m_GameObject: {fileID: 4582917133572705490}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: -8}
+  m_LocalPosition: {x: 0, y: 0, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -453,7 +517,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8723435540534691315}
   - component: {fileID: 5157703601705203727}
-  - component: {fileID: 8625451735456723365}
   m_Layer: 6
   m_Name: Abductor
   m_TagString: Untagged
@@ -492,7 +555,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.9528302, g: 0.5345711, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.9529412, b: 0.06695528, a: 1}
   m_Intensity: 50
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -526,38 +589,3 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!58 &8625451735456723365
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9029586934507181168}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 2}
-  serializedVersion: 2
-  m_Radius: 1

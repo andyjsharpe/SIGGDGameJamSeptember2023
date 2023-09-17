@@ -14,11 +14,16 @@ public class GridInitiator : MonoBehaviour
 
     [SerializeField] private GameObject[] buildings;
     [SerializeField] private GameObject[] car;
+    [SerializeField] private GameObject person;
     private List<Vector3> _intersections = new List<Vector3>();
+    private List<GameObject> _buildings = new List<GameObject>();
+
+    private Transform _playerTrans;
 
     // Start is called before the first frame update
     private void Start()
     {
+        _playerTrans = FindObjectOfType<AlienControl>().transform;
         var tilemap = GetComponentInChildren<Tilemap>();
         tilemap.ResizeBounds();
         var bounds = tilemap.localBounds;
@@ -49,29 +54,43 @@ public class GridInitiator : MonoBehaviour
                 }
             }
         }
+
+        foreach (var intersection in _intersections)
+        {
+            MakePerson(intersection);
+        }
     }
 
     private void MakeBuilding(Vector3 pos)
     {
-        Instantiate(buildings[Random.Range(0, buildings.Length)], pos, quaternion.identity);
+        var g = Instantiate(buildings[Random.Range(0, buildings.Length)], pos + Vector3.up * 0.375f, quaternion.identity, transform);
+        _buildings.Add(g);
     }
     
     private void MakeCar(Vector3 pos)
     {
         if (Random.value > 0.9f)
         {
-            Instantiate(car[Random.Range(0, car.Length)], pos, quaternion.identity);
+            Instantiate(car[Random.Range(0, car.Length)], pos+ Vector3.up * 0.375f, quaternion.identity);
+        }
+    }
+    
+    private void MakePerson(Vector3 pos)
+    {
+        if (Random.value > 0.1f)
+        {
+            Instantiate(person, pos+ Vector3.up * 0.375f, quaternion.identity);
         }
     }
 
     public Vector3 SecondNearestIntersection(Vector3 currentPos)
     {
         float bestDist = -1;
-        var bestPos = currentPos;
-        var secondBestPos = currentPos;
+        var bestPos = currentPos - Vector3.up * 0.375f;
+        var secondBestPos = bestPos;
         foreach (var vec in _intersections)
         {
-            var dist = Vector3.Distance(currentPos, vec);
+            var dist = Vector3.SqrMagnitude(currentPos - vec);
             if (bestDist < 0 || bestDist > dist)
             {
                 bestDist = dist;
@@ -80,6 +99,6 @@ public class GridInitiator : MonoBehaviour
             }
         }
 
-        return secondBestPos;
+        return secondBestPos + Vector3.up * 0.375f;
     }
 }
