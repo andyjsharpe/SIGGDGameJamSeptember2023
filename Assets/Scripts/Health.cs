@@ -9,25 +9,18 @@ public class Health : MonoBehaviour
 
     private Heat _heat;
 
-    //TODO: Make faster
-    private void Start()
-    {
-        _heat = FindObjectOfType<Heat>();
-    }
-
     public void Damage(int damage)
     {
         maxHealth -= damage;
-        if (maxHealth < 0)
+        if (maxHealth >= 0) return;
+        var transform1 = transform;
+        foreach (var g in spawnOnDeath)
         {
-            var transform1 = transform;
-            foreach (var g in spawnOnDeath)
-            {
-                Instantiate(g, transform1.position, transform1.rotation);
-            }
-            _heat.AddHeat(heatValue);
-            Destroy(gameObject);
+            Instantiate(g, transform1.position, transform1.rotation);
         }
+
+        Heat.heat += heatValue;
+        Destroy(gameObject);
     }
 
     public int GetHealth()

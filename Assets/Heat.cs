@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class Heat : MonoBehaviour
 {
-    private float _heat = 0;
+    public static float heat = 0;
     [SerializeField] private Slider[] heatSliders;
     [SerializeField] private TextMeshProUGUI timer;
     [SerializeField] private TextMeshProUGUI abductees;
@@ -15,11 +15,11 @@ public class Heat : MonoBehaviour
     [SerializeField] private Transform[] spawnPoints;
 
     [SerializeField] private GameObject heli;
-    [FormerlySerializedAs("F22")] [SerializeField] private GameObject f22;
-    [FormerlySerializedAs("Su")] [SerializeField] private GameObject su;
-    [FormerlySerializedAs("Swept")] [SerializeField] private GameObject swept;
-    [FormerlySerializedAs("B52")] [SerializeField] private GameObject b52;
-    [FormerlySerializedAs("Nuker")] [SerializeField] private GameObject nuker;
+    [SerializeField] private GameObject f22;
+    [SerializeField] private GameObject su;
+    [SerializeField] private GameObject swept;
+    [SerializeField] private GameObject b52;
+    [SerializeField] private GameObject bomber;
     
     [SerializeField] private Slider health;
 
@@ -27,13 +27,19 @@ public class Heat : MonoBehaviour
     private Transform _player;
     private Health _playerHealth;
 
-    private void Start()
+    public void Start()
     {
         _ac = FindObjectOfType<AlienControl>();
         _player = _ac.transform;
         _player.position = GetSpawn().position;
         _playerHealth = _player.GetComponent<Health>();
         StartCoroutine(nameof(SpawnThings));
+        Heat.heat = 0;
+        heatSliders[0].value = 0;
+        heatSliders[1].value = 0;
+        heatSliders[2].value = 0;
+        heatSliders[3].value = 0;
+        heatSliders[4].value = 0;
     }
 
     private Transform GetSpawn()
@@ -59,63 +65,53 @@ public class Heat : MonoBehaviour
     {
         while (true)
         {
-            if (_heat > 5)
+            switch (Mathf.Sqrt(Heat.heat))
             {
-                SpawnThis(nuker);
-                SpawnThis(f22);
-                SpawnThis(swept);
-                SpawnThis(su);
-                SpawnThis(b52);
+                case > 5:
+                    SpawnThis(bomber);
+                    SpawnThis(f22);
+                    SpawnThis(swept);
+                    SpawnThis(su);
+                    break;
+                case > 4:
+                    SpawnThis(su);
+                    SpawnThis(b52);
+                    break;
+                case > 3:
+                    SpawnThis(swept);
+                    SpawnThis(su);
+                    break;
+                case > 2:
+                    SpawnThis(f22);
+                    SpawnThis(swept);
+                    break;
+                case > 1:
+                    SpawnThis(heli);
+                    SpawnThis(f22);
+                    break;
+                default:
+                    SpawnThis(heli);
+                    break;
             }
-            else if (_heat > 4)
-            {
-                SpawnThis(f22);
-                SpawnThis(swept);
-                SpawnThis(su);
-                SpawnThis(b52);
-            }
-            else if (_heat > 3)
-            {
-                SpawnThis(f22);
-                SpawnThis(swept);
-                SpawnThis(su);
-            }
-            else if (_heat > 2)
-            {
-                SpawnThis(f22);
-                SpawnThis(swept);
-                SpawnThis(heli);
-            }
-            else if (_heat > 1)
-            {
-                SpawnThis(heli);
-                SpawnThis(f22);
-            }
-            else
-            {
-                SpawnThis(heli);
-            }
-            yield return new WaitForSeconds(20 / Mathf.Sqrt(Mathf.Max(_heat, 1)));
-        }
-    }
 
-    public void AddHeat(float heatDelta)
-    {
-        _heat += heatDelta;
-        heatSliders[0].value = Mathf.Max(0, Mathf.Min(1, _heat));
-        heatSliders[1].value = Mathf.Max(0, Mathf.Min(2, _heat) - 1);
-        heatSliders[2].value = Mathf.Max(0, Mathf.Min(3, _heat) - 2);
-        heatSliders[3].value = Mathf.Max(0, Mathf.Min(4, _heat) - 3);
-        heatSliders[4].value = Mathf.Max(0, Mathf.Min(5, _heat) - 4);
+            yield return new WaitForSeconds(20 / Mathf.Sqrt(Mathf.Max(Heat.heat, 1)));
+        }
     }
 
     private void Update()
     {
+        var correctedHeat = Mathf.Sqrt(Heat.heat);
         timer.text = "Time Survived: " + Time.time.ToString("F2");
-        abductees.text = "People abducted: " + _ac.abductees;
+        abductees.text = "People abducted: " + AlienControl.abductees;
         PlayerPrefs.SetFloat("Time", Time.time);
-        PlayerPrefs.SetInt("Abductees", _ac.abductees);
-        PlayerPrefs.SetFloat("Heat", _heat);
+        PlayerPrefs.SetInt("Abductees", AlienControl.abductees);
+        PlayerPrefs.SetFloat("Heat", Heat.heat);
         health.value = ((float)_playerHealth.GetHealth()) / 1000f;
+        
+        heatSliders[0].value = Mathf.Max(0, Mathf.Min(1, correctedHeat));
+        heatSliders[1].value = Mathf.Max(0, Mathf.Min(2, correctedHeat) - 1);
+        heatSliders[2].value = Mathf.Max(0, Mathf.Min(3, correctedHeat) - 2);
+        heatSliders[3].value = Mathf.Max(0, Mathf.Min(4, correctedHeat) - 3);
+        heatSliders[4].value = Mathf.Max(0, Mathf.Min(5, correctedHeat) - 4);
     }
 }

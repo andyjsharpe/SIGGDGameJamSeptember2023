@@ -50,13 +50,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdd4888f1571f342b43a8bc3bdae7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2000
-  turnSpeed: 2
+  speed: 1000
+  turnSpeed: 1
   attackDist: 8
   projectile: {fileID: 7360943321226920939, guid: f62be792e112bd34781b3fc50f96eb6f,
     type: 3}
   fireRate: 0.5
-  fireRatio: 0.25
+  fireRatio: 0.5
   spawnOffset: 1
 --- !u!212 &4312992235907882164
 SpriteRenderer:

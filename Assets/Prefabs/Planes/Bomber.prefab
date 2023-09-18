@@ -52,10 +52,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 250
   turnSpeed: 0.5
-  attackDist: 8
+  attackDist: 12
   projectile: {fileID: 2477569288375028526, guid: 88cf7aba717043c429bdfff1745462f1,
     type: 3}
-  fireRate: 10
+  fireRate: 4
   fireRatio: 1
   spawnOffset: -1
 --- !u!212 &4312992235907882164

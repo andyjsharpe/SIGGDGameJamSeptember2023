@@ -12,8 +12,8 @@ public class Missile : MonoBehaviour
     [SerializeField] private int splashDamage;
     [SerializeField] private GameObject spawnOnHit;
 
-    [FormerlySerializedAs("MissileRadius")] [SerializeField] private float missileRadius;
-    [FormerlySerializedAs("BlastRadius")] [SerializeField] private float blastRadius;
+    [SerializeField] private float missileRadius;
+    [SerializeField] private float blastRadius;
     
     [SerializeField] private float timer;
     

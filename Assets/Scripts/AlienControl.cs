@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class AlienControl : MonoBehaviour
 {
@@ -16,9 +17,8 @@ public class AlienControl : MonoBehaviour
     private bool _abducting = false;
     [SerializeField] private float fireRate;
     private float _shotTime = 0;
-
-    [HideInInspector]
-    public int abductees = 0;
+    
+    public static int abductees = 0;
 
     // Start is called before the first frame update
     private void Start()
@@ -72,20 +72,16 @@ public class AlienControl : MonoBehaviour
 
     private void TryAbduct()
     {
-        if (_abducting)
+        if (!_abducting) return;
+        //do abducting
+        var outs = Physics2D.OverlapCapsuleAll((Vector2)transform.position - Vector2.up * 2, new Vector2(1,2), CapsuleDirection2D.Vertical, 0);
+        foreach (var coll in outs)
         {
-            //do abducting
-            var outs = Physics2D.OverlapCapsuleAll((Vector2)transform.position - Vector2.up * 2, new Vector2(1,2), CapsuleDirection2D.Vertical, 0);
-            foreach (var coll in outs)
-            {
-                var pc = coll.GetComponent<PersonControl>();
-                if (pc is not null)
-                {
-                    pc.abducting = true;
-                    pc.newPos = transform.position;
-                    pc.GetComponent<SpriteRenderer>().sortingOrder = 1;
-                }
-            }
+            var pc = coll.GetComponent<PersonControl>();
+            if (pc == null || pc.abducting) continue;
+            pc.abducting = true;
+            pc.newPos = transform.position;
+            pc.GetComponent<SpriteRenderer>().sortingOrder = 1;
         }
     }
 
@@ -97,6 +93,6 @@ public class AlienControl : MonoBehaviour
 
     private void OnDestroy()
     {
-        Application.Quit();
+        SceneManager.LoadScene(2);
     }
 }

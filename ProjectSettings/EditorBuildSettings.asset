@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/New York.unity
+    path: Assets/Main Menu.unity
+    guid: ec1838b2b01ad3d4397f79a56cd78f7c
+  - enabled: 1
+    path: Assets/Map.unity
     guid: 0bf76d218dc746446aa903bb7fb5106c
+  - enabled: 1
+    path: Assets/End.unity
+    guid: f102d96302c7ece489d9d5e4e6cceaba
   m_configObjects: {}

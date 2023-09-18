@@ -19,7 +19,7 @@ public class ShrinkLight : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         _counter += Time.deltaTime;
         if (_counter > lifespan)
