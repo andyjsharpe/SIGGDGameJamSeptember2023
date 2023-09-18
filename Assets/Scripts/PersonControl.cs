@@ -56,9 +56,10 @@ public class PersonControl : MonoBehaviour
             newPos = _playerTrans.position;
             speed += 10 * Time.deltaTime;
 
-            if ((dist < 0.1f))
+            if (dist < 0.1f)
             {
                 AlienControl.abductees += 1;
+                AlienControl.health.Damage(-10);
                 Heat.heat += 0.01f;
                 Destroy(gameObject);
             }

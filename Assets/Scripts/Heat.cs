@@ -91,6 +91,7 @@ public class Heat : MonoBehaviour
                     break;
                 default:
                     SpawnThis(heli);
+                    SpawnThis(heli);
                     break;
             }
 

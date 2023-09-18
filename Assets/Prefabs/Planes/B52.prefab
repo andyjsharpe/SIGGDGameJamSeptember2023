@@ -256,7 +256,7 @@ MonoBehaviour:
   - {x: 0.3777507, y: -1, z: 0}
   m_ShapePathHash: -562795574
   m_Mesh: {fileID: 0}
-  m_InstanceId: 2319598
+  m_InstanceId: 3423920
   m_LocalBounds:
     m_Center: {x: 0.00045084953, y: 0.01708746, z: 0}
     m_Extent: {x: 1.0028477, y: 1.0170875, z: 0}
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 0.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -326,8 +326,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.78784996, y: -0.7911, z: 0}
-    m_Extent: {x: 0.54095, y: 0.543, z: 0}
+    m_Center: {x: -0.78585, y: -0.7939, z: 0}
+    m_Extent: {x: 0.53965, y: 0.54569995, z: 0}
   m_PointLightInnerAngle: 22.62
   m_PointLightOuterAngle: 50.03
   m_PointLightInnerRadius: 0
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 0.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -408,8 +408,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.77115, y: -0.7755, z: 0}
-    m_Extent: {x: 0.55015004, y: 0.5363, z: 0}
+    m_Center: {x: 0.7639, y: -0.7825, z: 0}
+    m_Extent: {x: 0.54539996, y: 0.5359, z: 0}
   m_PointLightInnerAngle: 22.62
   m_PointLightOuterAngle: 50.03
   m_PointLightInnerRadius: 0
