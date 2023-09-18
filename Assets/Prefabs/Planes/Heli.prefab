@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1404ae50f01d84e94d9ce9708f8371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 20
   spawnOnDeath:
   - {fileID: 474161189016911767, guid: e3060ff07ae76274b85835dd4c98cac7, type: 3}
   heatValue: 0.05

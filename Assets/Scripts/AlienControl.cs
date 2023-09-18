@@ -20,6 +20,8 @@ public class AlienControl : MonoBehaviour
     
     public static int abductees = 0;
 
+    private Health _health;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -27,6 +29,7 @@ public class AlienControl : MonoBehaviour
         _cam = GetComponentInChildren<Camera>();
         _beam = GetComponentInChildren<CircleCollider2D>();
         beamLight.enabled = false;
+        _health = GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -35,6 +38,7 @@ public class AlienControl : MonoBehaviour
         _rigid.AddForce(_dir * force);
         TryFire();
         TryAbduct();
+        _health.Damage(-Time.deltaTime);
     }
     
     public void OnMove(InputValue value)

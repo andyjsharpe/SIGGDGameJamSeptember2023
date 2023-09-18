@@ -3,16 +3,26 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int maxHealth;
+    [SerializeField] private float maxHealth;
+    private float _health;
     [SerializeField] private GameObject[] spawnOnDeath;
     [SerializeField] private float heatValue;
 
     private Heat _heat;
 
-    public void Damage(int damage)
+    private void Start()
     {
-        maxHealth -= damage;
-        if (maxHealth >= 0) return;
+        _health = maxHealth;
+    }
+
+    public void Damage(float damage)
+    {
+        _health -= damage;
+        if (_health > maxHealth)
+        {
+            _health = maxHealth;
+        }
+        if (_health >= 0) return;
         var transform1 = transform;
         foreach (var g in spawnOnDeath)
         {
@@ -23,8 +33,8 @@ public class Health : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public int GetHealth()
+    public float GetHealth()
     {
-        return maxHealth;
+        return _health;
     }
 }
