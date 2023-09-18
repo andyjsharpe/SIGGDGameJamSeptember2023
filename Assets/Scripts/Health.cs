@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -5,6 +6,14 @@ public class Health : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private GameObject[] spawnOnDeath;
     [SerializeField] private float heatValue;
+
+    private Heat _heat;
+
+    //TODO: Make faster
+    private void Start()
+    {
+        _heat = FindObjectOfType<Heat>();
+    }
 
     public void Damage(int damage)
     {
@@ -16,7 +25,7 @@ public class Health : MonoBehaviour
             {
                 Instantiate(g, transform1.position, transform1.rotation);
             }
-            FindObjectOfType<Heat>().AddHeat(heatValue);
+            _heat.AddHeat(heatValue);
             Destroy(gameObject);
         }
     }

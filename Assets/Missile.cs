@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Missile : MonoBehaviour
 {
@@ -11,16 +12,19 @@ public class Missile : MonoBehaviour
     [SerializeField] private int splashDamage;
     [SerializeField] private GameObject spawnOnHit;
 
-    [SerializeField] private float MissileRadius;
-    [SerializeField] private float BlastRadius;
+    [FormerlySerializedAs("MissileRadius")] [SerializeField] private float missileRadius;
+    [FormerlySerializedAs("BlastRadius")] [SerializeField] private float blastRadius;
     
     [SerializeField] private float timer;
+    
+    private Heat _heat;
 
     // Start is called before the first frame update
     private void Start()
     {
         _playerTrans = FindObjectOfType<AlienControl>().transform;
         _body = GetComponent<Rigidbody2D>();
+        _heat = FindObjectOfType<Heat>();
     }
 
     // Update is called once per frame
@@ -39,7 +43,7 @@ public class Missile : MonoBehaviour
         var angle = Vector3.SignedAngle(transform1.up, dir, Vector3.forward);
         var ratio = Mathf.Abs(angle)/180;
 
-        if (sqrDist < MissileRadius * MissileRadius)
+        if (sqrDist < missileRadius * missileRadius)
         {
             BlowUp();
         }
@@ -50,11 +54,13 @@ public class Missile : MonoBehaviour
 
     private void BlowUp()
     {
-        foreach (var hel in FindObjectsOfType<Health>())
+        var outs = Physics2D.OverlapCircleAll(transform.position, blastRadius);
+        foreach (var hel in outs)
         {
-            if (Vector3.SqrMagnitude(hel.transform.position - transform.position) < BlastRadius)
+            var health = hel.GetComponent<Health>();
+            if (health is not null)
             {
-                hel.Damage(splashDamage);
+                health.Damage(splashDamage);
             }
         }
         Destroy(gameObject);

@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   damage: 10
-  spawnOnHit: {fileID: 474161189016911767, guid: e3060ff07ae76274b85835dd4c98cac7,
+  spawnOnHit: {fileID: 3727088611917062829, guid: ad6ce192be8b3304a8322e344eeee821,
     type: 3}
 --- !u!1 &9164445987550506952
 GameObject:

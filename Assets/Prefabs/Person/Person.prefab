@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3961625827096871097}
   - component: {fileID: 6474814077724463102}
   - component: {fileID: 5749676237414433523}
+  - component: {fileID: 6949536030052778536}
   m_Layer: 8
   m_Name: Person
   m_TagString: Untagged
@@ -206,6 +207,18 @@ MonoBehaviour:
   spawnOnDeath:
   - {fileID: 474161189016911767, guid: 17985a2e085435a4891a273c8e8a1c0c, type: 3}
   heatValue: 0.01
+--- !u!114 &6949536030052778536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830489834897520754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814dc6b923ef54547a7c20c8eceb6e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5344979311384866253
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdd4888f1571f342b43a8bc3bdae7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
+  speed: 500
   turnSpeed: 0.25
   attackDist: 16
   projectile: {fileID: 8732421024401652074, guid: 282dadb671b49a249a669ec5f787915c,
@@ -159,7 +159,7 @@ PolygonCollider2D:
       - {x: 0.5, y: -0.5}
       - {x: 0.5, y: 0.0625}
       - {x: 0.1875, y: 0.5}
-  m_UseDelaunayMesh: 0
+  m_UseDelaunayMesh: 1
 --- !u!114 &8610745962869820083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
   - {x: 0.3777507, y: -1, z: 0}
   m_ShapePathHash: -562795574
   m_Mesh: {fileID: 0}
-  m_InstanceId: -3817862
+  m_InstanceId: 1232950
   m_LocalBounds:
     m_Center: {x: 0.00045084953, y: 0.01708746, z: 0}
     m_Extent: {x: 1.0028477, y: 1.0170875, z: 0}

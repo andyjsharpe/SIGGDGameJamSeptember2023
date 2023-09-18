@@ -18,12 +18,13 @@ public class PersonControl : MonoBehaviour
     
     [SerializeField] private float speed;
 
-    private GridInitiator _gridInitiator;
-
     private SpriteRenderer _renderer;
 
     private Transform _playerTrans;
 
+    private Heat _heat;
+
+    //TODO: Make faster
     // Start is called before the first frame update
     private void Start()
     {
@@ -32,12 +33,13 @@ public class PersonControl : MonoBehaviour
         GetComponent<Animator>().SetInteger(Outfit, Random.Range(0, 8));
         _anim = GetComponent<Animator>();
         _body = GetComponent<Rigidbody2D>();
-        _gridInitiator = FindObjectOfType<GridInitiator>();
         newPos = transform.position + (Vector3)Random.insideUnitCircle/4f;
         _playerTrans = FindObjectOfType<AlienControl>().transform;
         panicked = true;
+        _heat = FindObjectOfType<Heat>();
     }
 
+    //TODO: Make faster
     // Update is called once per frame
     private void Update()
     {
@@ -52,11 +54,7 @@ public class PersonControl : MonoBehaviour
                 _moveCounter = newTime;
             }
 
-            if (!panicked && dist < 0.1f)
-            {
-                newPos = _gridInitiator.SecondNearestIntersection(position);
-            }
-            else if (panicked && (_moveCounter > moveTime || dist < 0.1f))
+            if (panicked && (_moveCounter > moveTime || dist < 0.1f))
             {
                 newPos = transform.position + (Vector3)Random.insideUnitCircle;
             }
@@ -64,12 +62,12 @@ public class PersonControl : MonoBehaviour
         else
         {
             newPos = _playerTrans.position;
-            speed += speed*Time.deltaTime;
+            speed = Mathf.Pow(speed, 1 + Time.deltaTime);
 
             if (dist < 0.1f)
             {
                 _playerTrans.GetComponent<AlienControl>().abductees += 1;
-                FindObjectOfType<Heat>().AddHeat(0.01f);
+                _heat.AddHeat(0.01f);
                 Destroy(gameObject);
             }
         }
@@ -77,13 +75,6 @@ public class PersonControl : MonoBehaviour
         var newVel = (newPos - position).normalized * Mathf.Min(speed);
         _body.velocity = newVel;
         _anim.SetFloat(Vel, newVel.magnitude);
-        if (newVel.x > 0)
-        {
-            _renderer.flipX = true;
-        }
-        else
-        {
-            _renderer.flipX = false;
-        }
+        _renderer.flipX = newVel.x > 0;
     }
 }

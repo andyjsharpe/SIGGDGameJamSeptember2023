@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -14,24 +15,24 @@ public class Heat : MonoBehaviour
     [SerializeField] private Transform[] spawnPoints;
 
     [SerializeField] private GameObject heli;
-    [SerializeField] private GameObject F22;
-    [SerializeField] private GameObject Su;
-    [SerializeField] private GameObject Swept;
-    [SerializeField] private GameObject B52;
-    [SerializeField] private GameObject Nuker;
+    [FormerlySerializedAs("F22")] [SerializeField] private GameObject f22;
+    [FormerlySerializedAs("Su")] [SerializeField] private GameObject su;
+    [FormerlySerializedAs("Swept")] [SerializeField] private GameObject swept;
+    [FormerlySerializedAs("B52")] [SerializeField] private GameObject b52;
+    [FormerlySerializedAs("Nuker")] [SerializeField] private GameObject nuker;
     
     [SerializeField] private Slider health;
 
-    private AlienControl ac;
-    private Transform player;
-    private Health playerHealth;
+    private AlienControl _ac;
+    private Transform _player;
+    private Health _playerHealth;
 
     private void Start()
     {
-        ac = FindObjectOfType<AlienControl>();
-        player = ac.transform;
-        player.position = GetSpawn().position;
-        playerHealth = player.GetComponent<Health>();
+        _ac = FindObjectOfType<AlienControl>();
+        _player = _ac.transform;
+        _player.position = GetSpawn().position;
+        _playerHealth = _player.GetComponent<Health>();
         StartCoroutine(nameof(SpawnThings));
     }
 
@@ -40,7 +41,7 @@ public class Heat : MonoBehaviour
         while (true)
         {
             var point = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            if (Vector3.SqrMagnitude(point.position - player.position) < 144)
+            if (Vector3.SqrMagnitude(point.position - _player.position) < 144)
             {
                 continue;
             }
@@ -60,56 +61,41 @@ public class Heat : MonoBehaviour
         {
             if (_heat > 5)
             {
-                SpawnThis(Nuker);
-                SpawnThis(F22);
-                SpawnThis(Swept);
-                SpawnThis(Swept);
-                SpawnThis(Su);
-                SpawnThis(B52);
+                SpawnThis(nuker);
+                SpawnThis(f22);
+                SpawnThis(swept);
+                SpawnThis(su);
+                SpawnThis(b52);
             }
             else if (_heat > 4)
             {
-                SpawnThis(F22);
-                SpawnThis(Swept);
-                SpawnThis(Swept);
-                SpawnThis(Su);
-                SpawnThis(B52);
+                SpawnThis(f22);
+                SpawnThis(swept);
+                SpawnThis(su);
+                SpawnThis(b52);
             }
             else if (_heat > 3)
             {
-                SpawnThis(F22);
-                SpawnThis(Swept);
-                SpawnThis(Swept);
-                SpawnThis(Su);
+                SpawnThis(f22);
+                SpawnThis(swept);
+                SpawnThis(su);
             }
             else if (_heat > 2)
             {
-                SpawnThis(F22);
-                SpawnThis(F22);
-                SpawnThis(Swept);
-                SpawnThis(Swept);
-                SpawnThis(Swept);
-                SpawnThis(heli);
+                SpawnThis(f22);
+                SpawnThis(swept);
                 SpawnThis(heli);
             }
             else if (_heat > 1)
             {
                 SpawnThis(heli);
-                SpawnThis(heli);
-                SpawnThis(heli);
-                SpawnThis(heli);
-                SpawnThis(heli);
-                SpawnThis(F22);
+                SpawnThis(f22);
             }
             else
             {
                 SpawnThis(heli);
-                SpawnThis(heli);
-                SpawnThis(heli);
-                SpawnThis(heli);
-                SpawnThis(heli);
             }
-            yield return new WaitForSeconds(10 / Mathf.Sqrt(Mathf.Max(_heat, 1)));
+            yield return new WaitForSeconds(20 / Mathf.Sqrt(Mathf.Max(_heat, 1)));
         }
     }
 
@@ -126,10 +112,10 @@ public class Heat : MonoBehaviour
     private void Update()
     {
         timer.text = "Time Survived: " + Time.time.ToString("F2");
-        abductees.text = "People abducted: " + ac.abductees;
+        abductees.text = "People abducted: " + _ac.abductees;
         PlayerPrefs.SetFloat("Time", Time.time);
-        PlayerPrefs.SetInt("Abductees", ac.abductees);
+        PlayerPrefs.SetInt("Abductees", _ac.abductees);
         PlayerPrefs.SetFloat("Heat", _heat);
-        health.value = playerHealth.GetHealth() / 1000f;
+        health.value = ((float)_playerHealth.GetHealth()) / 1000f;
     }
 }

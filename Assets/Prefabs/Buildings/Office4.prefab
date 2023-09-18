@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5345449363356860116}
   - component: {fileID: 1174654421854739511}
-  - component: {fileID: 2351615979106552600}
+  - component: {fileID: 6806818330831863887}
   - component: {fileID: 8348641560282083564}
   - component: {fileID: -2815381087525200020}
   - component: {fileID: -4455107867377601291}
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &2351615979106552600
+--- !u!114 &6806818330831863887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,20 +108,18 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 000000002da7ab25
   m_ShapePath:
-  - {x: -0.011298597, y: -0.36590827, z: 0}
-  - {x: -0.34628418, y: -0.0033103228, z: 0}
-  - {x: -0.35807076, y: 0.23986256, z: 0}
-  - {x: -0.06551821, y: 0.53238267, z: 0}
-  - {x: 0.012551248, y: 0.5412301, z: 0}
-  - {x: 0.38669917, y: 0.17892462, z: 0}
-  - {x: 0.37826693, y: -0.0407269, z: 0}
-  - {x: 0.05583784, y: -0.3714065, z: 0}
-  m_ShapePathHash: -1654476923
+  - {x: -0.37428525, y: 0.0114709735, z: 0}
+  - {x: -0.38057104, y: 0.22309303, z: 0}
+  - {x: -0.021716118, y: 0.53242993, z: 0}
+  - {x: 0.39942822, y: 0.20088422, z: 0}
+  - {x: 0.3997728, y: -0.05676332, z: 0}
+  - {x: 0.028914332, y: -0.36565566, z: 0}
+  m_ShapePathHash: -179527773
   m_Mesh: {fileID: 0}
-  m_InstanceId: 67914
+  m_InstanceId: -2444378
   m_LocalBounds:
-    m_Center: {x: 0.014314204, y: 0.08491179, z: 0}
-    m_Extent: {x: 0.37238497, y: 0.4563183, z: 0}
+    m_Center: {x: 0.009600878, y: 0.08338714, z: 0}
+    m_Extent: {x: 0.39017192, y: 0.4490428, z: 0}
 --- !u!60 &8348641560282083564
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -166,15 +164,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.125, y: 0.875}
-      - {x: -0.3125, y: 0.6875}
-      - {x: -0.3125, y: 0}
-      - {x: -0.125, y: -0.1875}
-      - {x: 0.125, y: -0.1875}
-      - {x: 0.3125, y: 0}
-      - {x: 0.3125, y: 0.6875}
-      - {x: 0.125, y: 0.875}
-  m_UseDelaunayMesh: 0
+    - - {x: -0.36633953, y: 0.013778806}
+      - {x: 0.019803673, y: -0.3561715}
+      - {x: 0.37599307, y: -0.065081745}
+      - {x: 0.3897286, y: 0.20029283}
+      - {x: -0.015721649, y: 0.53372645}
+      - {x: -0.36250573, y: 0.24839091}
+  m_UseDelaunayMesh: 1
 --- !u!114 &-2815381087525200020
 MonoBehaviour:
   m_ObjectHideFlags: 0

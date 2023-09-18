@@ -50,8 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdd4888f1571f342b43a8bc3bdae7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2000
-  turnSpeed: 2
+  speed: 1000
+  turnSpeed: 8
   attackDist: 8
   projectile: {fileID: 5448471119693847778, guid: db3ed28f62dbddb42ac7109596fde2cd,
     type: 3}
@@ -160,7 +160,7 @@ PolygonCollider2D:
       - {x: 0.5, y: -0.5}
       - {x: 0.5, y: 0.0625}
       - {x: 0.1875, y: 0.5}
-  m_UseDelaunayMesh: 0
+  m_UseDelaunayMesh: 1
 --- !u!114 &8610745962869820083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1404ae50f01d84e94d9ce9708f8371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 20
   spawnOnDeath:
   - {fileID: 474161189016911767, guid: e3060ff07ae76274b85835dd4c98cac7, type: 3}
   heatValue: 0.1
@@ -238,8 +238,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0036000013, y: -0.39984998, z: 0}
-    m_Extent: {x: 0.682, y: 0.52924997, z: 0}
+    m_Center: {x: -0.000050008297, y: -0.3994, z: 0}
+    m_Extent: {x: 0.68385, y: 0.5342, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -300,7 +300,7 @@ MonoBehaviour:
   - {x: -0.05520308, y: -0.49682543, z: 0}
   m_ShapePathHash: 512310634
   m_Mesh: {fileID: 0}
-  m_InstanceId: -3844922
+  m_InstanceId: 1233138
   m_LocalBounds:
     m_Center: {x: 0.004192382, y: -0.00069877505, z: 0}
     m_Extent: {x: 0.4437189, y: 0.49612665, z: 0}

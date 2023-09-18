@@ -75,10 +75,10 @@ public class AlienControl : MonoBehaviour
         if (_abducting)
         {
             //do abducting
-            Collider2D[] outs = Physics2D.OverlapCapsuleAll((Vector2)transform.position - Vector2.up * 2, new Vector2(1,2), CapsuleDirection2D.Vertical, 0);
+            var outs = Physics2D.OverlapCapsuleAll((Vector2)transform.position - Vector2.up * 2, new Vector2(1,2), CapsuleDirection2D.Vertical, 0);
             foreach (var coll in outs)
             {
-                PersonControl pc = coll.GetComponent<PersonControl>();
+                var pc = coll.GetComponent<PersonControl>();
                 if (pc is not null)
                 {
                     pc.abducting = true;

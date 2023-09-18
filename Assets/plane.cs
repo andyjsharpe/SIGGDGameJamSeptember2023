@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class plane : MonoBehaviour
+public class Plane : MonoBehaviour
 {
     private Transform _playerTrans;
     private Rigidbody2D _body;
@@ -55,12 +55,11 @@ public class plane : MonoBehaviour
         {
             _shotTime = newTime;
         }
-        if (_shotTime > fireRate)
-        {
-            var transform1 = transform;
-            var dir = transform1.up;
-            Instantiate(projectile, transform1.position + dir.normalized * spawnOffset, transform1.rotation);
-            _shotTime -= fireRate;
-        }
+
+        if (!(_shotTime > fireRate)) return;
+        var transform1 = transform;
+        var dir = transform1.up;
+        Instantiate(projectile, transform1.position + dir.normalized * spawnOffset, transform1.rotation);
+        _shotTime -= fireRate;
     }
 }

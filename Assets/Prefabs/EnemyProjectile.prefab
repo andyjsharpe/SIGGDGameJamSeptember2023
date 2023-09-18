@@ -185,7 +185,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 7862
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -237,7 +237,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -255,6 +255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  damage: 1
-  spawnOnHit: {fileID: 474161189016911767, guid: e3060ff07ae76274b85835dd4c98cac7,
+  damage: 10
+  spawnOnHit: {fileID: 3727088611917062829, guid: ad6ce192be8b3304a8322e344eeee821,
     type: 3}
