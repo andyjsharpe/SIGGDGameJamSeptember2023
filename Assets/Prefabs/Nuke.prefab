@@ -131,8 +131,8 @@ MonoBehaviour:
   splashDamage: 100
   spawnOnHit: {fileID: 5097940253780335700, guid: ab9ba15581469134289fcd13e0377533,
     type: 3}
-  blastRadius: 8
-  timer: 8
+  blastRadius: 4
+  timer: 4
 --- !u!61 &1575309516287438457
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -106,7 +106,7 @@ MonoBehaviour:
   splashDamage: 20
   spawnOnHit: {fileID: 3727088611917062829, guid: ce3ea99c439dffa41a3a3d29a8e92cc0,
     type: 3}
-  missileRadius: 1
+  missileRadius: 2
   blastRadius: 2
   timer: 10
 --- !u!50 &1779287140779338338

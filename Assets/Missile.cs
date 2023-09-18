@@ -58,10 +58,8 @@ public class Missile : MonoBehaviour
         foreach (var hel in outs)
         {
             var health = hel.GetComponent<Health>();
-            if (health is not null)
-            {
-                health.Damage(splashDamage);
-            }
+            if (health == null || hel.GetComponent<Plane>() != null) continue;
+            health.Damage(splashDamage);
         }
         Destroy(gameObject);
     }
@@ -69,7 +67,7 @@ public class Missile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         var health = other.transform.GetComponent<Health>();
-        if (health != null)
+        if (health != null && other.transform.GetComponent<Plane>() == null)
         {
             health.Damage(damage);
         }

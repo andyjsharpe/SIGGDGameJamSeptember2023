@@ -43,7 +43,7 @@ public class Bomb : MonoBehaviour
         foreach (var hel in outs)
         {
             var health = hel.GetComponent<Health>();
-            if (health == null || hel.GetComponent<Plane>() == null) continue;
+            if (health == null || hel.GetComponent<Plane>() != null) continue;
             health.Damage(splashDamage);
         }
         Destroy(gameObject);

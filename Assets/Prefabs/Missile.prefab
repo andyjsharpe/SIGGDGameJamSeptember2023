@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f380a8c2d942a49a2331cbb351ca61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6000
-  turnSpeed: 1
+  speed: 4000
+  turnSpeed: 4
   damage: 100
   splashDamage: 20
   spawnOnHit: {fileID: 3727088611917062829, guid: ce3ea99c439dffa41a3a3d29a8e92cc0,
