@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Missile : MonoBehaviour
 {
@@ -14,6 +13,8 @@ public class Missile : MonoBehaviour
 
     [SerializeField] private float missileRadius;
     [SerializeField] private float blastRadius;
+    
+    [SerializeField] private float trackRatio;
     
     [SerializeField] private float timer;
     
@@ -49,7 +50,10 @@ public class Missile : MonoBehaviour
         }
 
         _body.AddForce((1 - ratio) * speed * Time.deltaTime * transform1.up, ForceMode2D.Force);
-        transform.Rotate(Vector3.forward, angle * turnSpeed * Time.deltaTime);
+        if (ratio < trackRatio)
+        {
+            transform.Rotate(Vector3.forward, angle * turnSpeed * Time.deltaTime);
+        }
     }
 
     private void BlowUp()

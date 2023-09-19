@@ -68,14 +68,30 @@ public class Heat : MonoBehaviour
             switch (Mathf.Sqrt(Heat.heat))
             {
                 case > 5:
-                    SpawnThis(bomber);
-                    SpawnThis(f22);
-                    SpawnThis(swept);
-                    SpawnThis(su);
+                    if (Random.value > 0.8)
+                    {
+                        SpawnThis(Random.value > 0.75f ? b52 : bomber);
+                    }
+                    if (Random.value > 0.5)
+                    {
+                        SpawnThis(f22);
+                    }
+                    if (Random.value > 0.5)
+                    {
+                        SpawnThis(swept);
+                    }
+                    if (Random.value > 0.5)
+                    {
+                        SpawnThis(su);
+                    }
                     break;
                 case > 4:
-                    SpawnThis(su);
-                    SpawnThis(b52);
+                    if (Random.value > 0.9)
+                    {
+                        SpawnThis(b52);
+                    }
+                    SpawnThis(Random.value > 0.5 ? su : f22);
+                    SpawnThis(swept);
                     break;
                 case > 3:
                     SpawnThis(swept);

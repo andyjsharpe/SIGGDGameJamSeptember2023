@@ -56,7 +56,7 @@ MonoBehaviour:
   attackDist: 4
   projectile: {fileID: 5448471119693847778, guid: db3ed28f62dbddb42ac7109596fde2cd,
     type: 3}
-  fireRate: 0.25
+  fireRate: 0.5
   fireRatio: 0.5
   spawnOffset: 1
 --- !u!212 &4312992235907882164

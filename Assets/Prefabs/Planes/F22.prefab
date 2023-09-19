@@ -52,11 +52,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 700
   turnSpeed: 1.5
-  attackDist: 6
+  attackDist: 8
   projectile: {fileID: 8111975240050322911, guid: 7d912279b91622443945a653730185fe,
     type: 3}
-  fireRate: 1
-  fireRatio: 0.25
+  fireRate: 2
+  fireRatio: 0.5
   spawnOffset: 1
 --- !u!212 &4312992235907882164
 SpriteRenderer:
