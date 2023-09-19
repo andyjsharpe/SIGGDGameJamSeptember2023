@@ -1,13 +1,12 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Heat : MonoBehaviour
 {
-    public static float heat = 0;
+    public static float HeatValue;
     [SerializeField] private Slider[] heatSliders;
     [SerializeField] private TextMeshProUGUI timer;
     [SerializeField] private TextMeshProUGUI abductees;
@@ -34,7 +33,7 @@ public class Heat : MonoBehaviour
         _player.position = GetSpawn().position;
         _playerHealth = _player.GetComponent<Health>();
         StartCoroutine(nameof(SpawnThings));
-        Heat.heat = 0;
+        Heat.HeatValue = 0;
         heatSliders[0].value = 0;
         heatSliders[1].value = 0;
         heatSliders[2].value = 0;
@@ -63,9 +62,14 @@ public class Heat : MonoBehaviour
 
     public IEnumerator SpawnThings()
     {
+        SpawnThis(heli);
+        SpawnThis(heli);
+        SpawnThis(heli);
+        SpawnThis(heli);
+        yield return new WaitForSeconds(10);
         while (true)
         {
-            switch (Mathf.Sqrt(Heat.heat))
+            switch (Mathf.Sqrt(Heat.HeatValue))
             {
                 case > 5:
                     if (Random.value > 0.8)
@@ -111,19 +115,19 @@ public class Heat : MonoBehaviour
                     break;
             }
 
-            yield return new WaitForSeconds(20 / Mathf.Sqrt(Mathf.Max(Heat.heat, 1)));
+            yield return new WaitForSeconds(20 / Mathf.Sqrt(Mathf.Max(Heat.HeatValue, 1)));
         }
     }
 
     private void Update()
     {
-        var correctedHeat = Mathf.Sqrt(Heat.heat);
+        var correctedHeat = Mathf.Sqrt(Heat.HeatValue);
         timer.text = "Time Survived: " + Time.time.ToString("F2");
-        abductees.text = "People abducted: " + AlienControl.abductees;
+        abductees.text = "People abducted: " + AlienControl.Abductees;
         PlayerPrefs.SetFloat("Time", Time.time);
-        PlayerPrefs.SetInt("Abductees", AlienControl.abductees);
-        PlayerPrefs.SetFloat("Heat", Heat.heat);
-        health.value = ((float)_playerHealth.GetHealth()) / 1000f;
+        PlayerPrefs.SetInt("Abductees", AlienControl.Abductees);
+        PlayerPrefs.SetFloat("Heat", Heat.HeatValue);
+        health.value = _playerHealth.GetHealth() / 1000f;
         
         heatSliders[0].value = Mathf.Max(0, Mathf.Min(1, correctedHeat));
         heatSliders[1].value = Mathf.Max(0, Mathf.Min(2, correctedHeat) - 1);

@@ -10,26 +10,24 @@ public class AlienControl : MonoBehaviour
     private Rigidbody2D _rigid;
     private Camera _cam;
     [SerializeField] private GameObject projectile;
-    private CircleCollider2D _beam;
     [SerializeField] private Light2D beamLight;
 
-    private bool _firing = false;
-    private bool _abducting = false;
+    private bool _firing;
+    private bool _abducting;
     [SerializeField] private float fireRate;
-    private float _shotTime = 0;
+    private float _shotTime;
     
-    public static int abductees = 0;
+    public static int Abductees = 0;
 
-    public static Health health;
+    public static Health Health;
 
     // Start is called before the first frame update
     private void Start()
     {
         _rigid = GetComponent<Rigidbody2D>();
         _cam = GetComponentInChildren<Camera>();
-        _beam = GetComponentInChildren<CircleCollider2D>();
         beamLight.enabled = false;
-        health = GetComponent<Health>();
+        Health = GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -38,7 +36,7 @@ public class AlienControl : MonoBehaviour
         _rigid.AddForce(_dir * force);
         TryFire();
         TryAbduct();
-        health.Damage(-Time.deltaTime);
+        Health.Damage(-Time.deltaTime);
     }
 
     public void OnMove(InputValue value)

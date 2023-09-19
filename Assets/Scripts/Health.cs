@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
             Instantiate(g, transform1.position, transform1.rotation);
         }
 
-        Heat.heat += heatValue;
+        Heat.HeatValue += heatValue;
         Destroy(gameObject);
     }
 

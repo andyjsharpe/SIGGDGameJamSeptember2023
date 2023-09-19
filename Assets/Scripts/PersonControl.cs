@@ -3,7 +3,6 @@ using UnityEngine;
 public class PersonControl : MonoBehaviour
 {
     private static readonly int Outfit = Animator.StringToHash("Outfit");
-    private static readonly int Vel = Animator.StringToHash("Vel");
     private Rigidbody2D _body;
 
     [HideInInspector]
@@ -12,7 +11,7 @@ public class PersonControl : MonoBehaviour
     [SerializeField] private float moveTime;
     private float _moveCounter;
 
-    [HideInInspector] public bool abducting = false;
+    [HideInInspector] public bool abducting;
     
     [SerializeField] private float speed;
 
@@ -58,9 +57,9 @@ public class PersonControl : MonoBehaviour
 
             if (dist < 0.1f)
             {
-                AlienControl.abductees += 1;
-                AlienControl.health.Damage(-10);
-                Heat.heat += 0.01f;
+                AlienControl.Abductees += 1;
+                AlienControl.Health.Damage(-10);
+                Heat.HeatValue += 0.01f;
                 Destroy(gameObject);
             }
         }

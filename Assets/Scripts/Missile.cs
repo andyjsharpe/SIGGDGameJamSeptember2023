@@ -17,15 +17,12 @@ public class Missile : MonoBehaviour
     [SerializeField] private float trackRatio;
     
     [SerializeField] private float timer;
-    
-    private Heat _heat;
 
     // Start is called before the first frame update
     private void Start()
     {
         _playerTrans = FindObjectOfType<AlienControl>().transform;
         _body = GetComponent<Rigidbody2D>();
-        _heat = FindObjectOfType<Heat>();
     }
 
     // Update is called once per frame

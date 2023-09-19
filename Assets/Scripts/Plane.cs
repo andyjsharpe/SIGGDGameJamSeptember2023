@@ -12,7 +12,7 @@ public class Plane : MonoBehaviour
     [SerializeField] private GameObject projectile;
     
     [SerializeField] private float fireRate;
-    private float _shotTime = 0;
+    private float _shotTime;
     
     [SerializeField] private float fireRatio;
     
@@ -39,7 +39,7 @@ public class Plane : MonoBehaviour
         
         if (sqrDist < attackDist * attackDist && ratio < fireRatio)
         {
-            TryFire(dir);
+            TryFire();
             ts /= 2;
             s *= 2;
         }
@@ -48,7 +48,7 @@ public class Plane : MonoBehaviour
         transform.Rotate(Vector3.forward, angle * ts * Time.deltaTime);
     }
     
-    private void TryFire(Vector3 pathDir)
+    private void TryFire()
     {
         var newTime = _shotTime + Time.deltaTime;
         if (_shotTime < fireRate)

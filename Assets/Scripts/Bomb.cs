@@ -14,14 +14,11 @@ public class Bomb : MonoBehaviour
     
     [SerializeField] private float timer;
 
-    private Heat _heat;
-
     // Start is called before the first frame update
     private void Start()
     {
         _body = GetComponent<Rigidbody2D>();
         transform.rotation = Quaternion.identity;
-        _heat = FindObjectOfType<Heat>();
     }
 
     // Update is called once per frame
