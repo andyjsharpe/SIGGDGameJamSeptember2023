@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f380a8c2d942a49a2331cbb351ca61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
-  turnSpeed: 4
+  speed: 2000
+  turnSpeed: 8
   damage: 100
   splashDamage: 20
   spawnOnHit: {fileID: 3727088611917062829, guid: ce3ea99c439dffa41a3a3d29a8e92cc0,
@@ -202,7 +202,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 7606
+    m_Bits: 7478
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

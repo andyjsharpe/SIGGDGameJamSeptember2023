@@ -56,7 +56,7 @@ MonoBehaviour:
   attackDist: 12
   projectile: {fileID: 8732421024401652074, guid: 282dadb671b49a249a669ec5f787915c,
     type: 3}
-  fireRate: 2
+  fireRate: 0.75
   fireRatio: 0.5
   spawnOffset: -1
 --- !u!212 &4312992235907882164
@@ -256,7 +256,7 @@ MonoBehaviour:
   - {x: 0.3777507, y: -1, z: 0}
   m_ShapePathHash: -562795574
   m_Mesh: {fileID: 0}
-  m_InstanceId: 3423920
+  m_InstanceId: 1136072
   m_LocalBounds:
     m_Center: {x: 0.00045084953, y: 0.01708746, z: 0}
     m_Extent: {x: 1.0028477, y: 1.0170875, z: 0}
@@ -326,8 +326,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.78585, y: -0.7939, z: 0}
-    m_Extent: {x: 0.53965, y: 0.54569995, z: 0}
+    m_Center: {x: -0.77709997, y: -0.78505, z: 0}
+    m_Extent: {x: 0.5345, y: 0.53805, z: 0}
   m_PointLightInnerAngle: 22.62
   m_PointLightOuterAngle: 50.03
   m_PointLightInnerRadius: 0
@@ -408,8 +408,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.7639, y: -0.7825, z: 0}
-    m_Extent: {x: 0.54539996, y: 0.5359, z: 0}
+    m_Center: {x: 0.76734996, y: -0.77925, z: 0}
+    m_Extent: {x: 0.54715, y: 0.54034996, z: 0}
   m_PointLightInnerAngle: 22.62
   m_PointLightOuterAngle: 50.03
   m_PointLightInnerRadius: 0

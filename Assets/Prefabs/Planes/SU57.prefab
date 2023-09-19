@@ -50,13 +50,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdd4888f1571f342b43a8bc3bdae7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
-  turnSpeed: 1
+  speed: 2000
+  turnSpeed: 4
   attackDist: 8
   projectile: {fileID: 7360943321226920939, guid: f62be792e112bd34781b3fc50f96eb6f,
     type: 3}
-  fireRate: 1
-  fireRatio: 0.5
+  fireRate: 2
+  fireRatio: 0.25
   spawnOffset: 1
 --- !u!212 &4312992235907882164
 SpriteRenderer:
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.74436086, b: 0, a: 1}
+  m_Color: {r: 0.9960785, g: 0.6313726, b: 0, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -238,8 +238,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0026000142, y: -0.405, z: 0}
-    m_Extent: {x: 0.695, y: 0.5362, z: 0}
+    m_Center: {x: 0.0017000139, y: -0.4066, z: 0}
+    m_Extent: {x: 0.69949996, y: 0.5384, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
   - {x: -0.35218006, y: -0.4863439, z: 0}
   m_ShapePathHash: 568284899
   m_Mesh: {fileID: 0}
-  m_InstanceId: 1233044
+  m_InstanceId: 1135542
   m_LocalBounds:
     m_Center: {x: 0.0019065738, y: 0.0010482073, z: 0}
     m_Extent: {x: 0.5054004, y: 0.50136745, z: 0}

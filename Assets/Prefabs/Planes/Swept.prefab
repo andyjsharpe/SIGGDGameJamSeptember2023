@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3010567739721168235}
   - component: {fileID: 8610745962869820083}
   - component: {fileID: 5428036894637443367}
-  - component: {fileID: 7593863318899019359}
-  - component: {fileID: 1022272319681024615}
+  - component: {fileID: 6073038437796487397}
+  - component: {fileID: 9186869684360129009}
   m_Layer: 10
   m_Name: Swept
   m_TagString: Untagged
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 500
   turnSpeed: 4
-  attackDist: 8
+  attackDist: 6
   projectile: {fileID: 5448471119693847778, guid: db3ed28f62dbddb42ac7109596fde2cd,
     type: 3}
   fireRate: 0.25
@@ -204,57 +204,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7593863318899019359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2816516066153986471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ComponentVersion: 1
-  m_LightType: 1
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 0.9960785, g: 0.9686275, b: 0.29411766, a: 1}
-  m_Intensity: 1
-  m_LightVolumeIntensity: 1
-  m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000002da7ab25
-  m_LightCookieSprite: {fileID: 0}
-  m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 0
-  m_NormalMapDistance: 3
-  m_NormalMapQuality: 2
-  m_UseNormalMap: 0
-  m_ShadowIntensityEnabled: 1
-  m_ShadowIntensity: 0.99
-  m_ShadowVolumeIntensityEnabled: 0
-  m_ShadowVolumeIntensity: 0.75
-  m_LocalBounds:
-    m_Center: {x: -0.000050008297, y: -0.3994, z: 0}
-    m_Extent: {x: 0.68385, y: 0.5342, z: 0}
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.17928071, y: -0.43816257, z: 0}
-  - {x: 0.19153024, y: -0.43462664, z: 0}
-  - {x: 0.19161454, y: -0.37123337, z: 0}
-  - {x: -0.18285884, y: -0.37998912, z: 0}
---- !u!114 &1022272319681024615
+--- !u!114 &6073038437796487397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,33 +224,78 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 000000002da7ab25
   m_ShapePath:
-  - {x: -0.18205962, y: -0.4965061, z: 0}
-  - {x: -0.23338938, y: -0.3465899, z: 0}
-  - {x: -0.42555115, y: -0.119489655, z: 0}
-  - {x: -0.43952653, y: 0.04821513, z: 0}
-  - {x: -0.3382049, y: 0.13206752, z: 0}
-  - {x: -0.14953703, y: -0.08455116, z: 0}
-  - {x: -0.12508008, y: 0.051708974, z: 0}
-  - {x: -0.24387094, y: 0.09014132, z: 0}
-  - {x: -0.12857395, y: 0.19845065, z: 0}
-  - {x: -0.0667626, y: 0.42662913, z: 0}
-  - {x: 0.0041923523, y: 0.49542788, z: 0}
-  - {x: 0.07025647, y: 0.42662913, z: 0}
-  - {x: 0.13346478, y: 0.1949568, z: 0}
-  - {x: 0.22779873, y: 0.08315362, z: 0}
-  - {x: 0.11948939, y: 0.044721276, z: 0}
-  - {x: 0.16840328, y: -0.09503271, z: 0}
-  - {x: 0.34658962, y: 0.15303062, z: 0}
-  - {x: 0.43742973, y: 0.058696672, z: 0}
-  - {x: 0.44791126, y: -0.119489655, z: 0}
-  - {x: 0.25543052, y: -0.3427768, z: 0}
-  - {x: 0.18587254, y: -0.49682543, z: 0}
-  - {x: 0.05310625, y: -0.48983774, z: 0}
-  - {x: 0.0076862127, y: -0.39899766, z: 0}
-  - {x: -0.05520308, y: -0.49682543, z: 0}
-  m_ShapePathHash: 512310634
+  - {x: -0.19929865, y: -0.36065057, z: 0}
+  - {x: -0.3129847, y: -0.2507033, z: 0}
+  - {x: -0.3863265, y: -0.12968934, z: 0}
+  - {x: -0.3753252, y: 0.09033604, z: 0}
+  - {x: -0.14429852, y: -0.10035264, z: 0}
+  - {x: -0.07095674, y: -0.045346282, z: 0}
+  - {x: -0.06728968, y: 0.060999326, z: 0}
+  - {x: -0.20663908, y: 0.06833351, z: 0}
+  - {x: -0.092953, y: 0.21396697, z: 0}
+  - {x: -0.0012820661, y: 0.5083843, z: 0}
+  - {x: 0.08928597, y: 0.21029991, z: 0}
+  - {x: 0.21140915, y: 0.060999326, z: 0}
+  - {x: 0.07939392, y: 0.053665143, z: 0}
+  - {x: 0.07205975, y: -0.04901337, z: 0}
+  - {x: 0.14540154, y: -0.09301847, z: 0}
+  - {x: 0.38632023, y: 0.0830673, z: 0}
+  - {x: 0.38376233, y: -0.11868802, z: 0}
+  - {x: 0.32508895, y: -0.26170456, z: 0}
+  - {x: 0.18940663, y: -0.36805016, z: 0}
+  m_ShapePathHash: 605506817
   m_Mesh: {fileID: 0}
-  m_InstanceId: 1233138
+  m_InstanceId: -791016
   m_LocalBounds:
-    m_Center: {x: 0.004192382, y: -0.00069877505, z: 0}
-    m_Extent: {x: 0.4437189, y: 0.49612665, z: 0}
+    m_Center: {x: -0.0000031292439, y: 0.070167065, z: 0}
+    m_Extent: {x: 0.38632336, y: 0.43821722, z: 0}
+--- !u!114 &9186869684360129009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816516066153986471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.99607843, g: 0.96862745, b: 0.29411766, a: 1}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 000000002da7ab25
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: -0.0012999773, y: -0.402, z: 0}
+    m_Extent: {x: 0.69, y: 0.539, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.19196448, y: -0.4413265, z: 0}
+  - {x: 0.19563153, y: -0.44132656, z: 0}
+  - {x: 0.1772961, y: -0.37276733, z: 0}
+  - {x: -0.1846303, y: -0.36910027, z: 0}

@@ -80,6 +80,6 @@ public class AutoCuller : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        OnOff((_playerTrans.position - transform.position).sqrMagnitude > 144);
+        //OnOff((_playerTrans.position - transform.position).sqrMagnitude < 144);
     }
 }

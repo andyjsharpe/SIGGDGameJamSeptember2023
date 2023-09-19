@@ -19,6 +19,8 @@ public class PersonControl : MonoBehaviour
 
     private Transform _playerTrans;
 
+    private Vector3 startPos;
+
     //TODO: Make faster
     // Start is called before the first frame update
     private void Start()
@@ -27,7 +29,8 @@ public class PersonControl : MonoBehaviour
         _renderer.color = Color.HSVToRGB(Random.Range(0f, 0.15f), Random.Range(0.1f, 0.5f), Random.Range(1, 0.25f));
         GetComponent<Animator>().SetInteger(Outfit, Random.Range(0, 8));
         _body = GetComponent<Rigidbody2D>();
-        newPos = transform.position + ((Vector3)Random.insideUnitCircle)/4f;
+        startPos = transform.position;
+        newPos = startPos + ((Vector3)Random.insideUnitCircle)/4f;
         _playerTrans = FindObjectOfType<AlienControl>().transform;
     }
 
@@ -47,7 +50,9 @@ public class PersonControl : MonoBehaviour
             }
 
             if (!(_moveCounter > moveTime) && !(dist < 0.1f)) return;
-            newPos = transform.position + (Vector3)Random.insideUnitCircle;
+            var distStart = Vector3.SqrMagnitude(newPos - startPos);
+
+            newPos = distStart > 9 ? startPos : transform.position + (Vector3)Random.insideUnitCircle;
             _moveCounter -= moveTime;
         }
         else
