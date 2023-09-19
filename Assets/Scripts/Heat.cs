@@ -26,6 +26,8 @@ public class Heat : MonoBehaviour
     private Transform _player;
     private Health _playerHealth;
 
+    private float levelStart;
+
     public void Start()
     {
         _ac = FindObjectOfType<AlienControl>();
@@ -39,6 +41,7 @@ public class Heat : MonoBehaviour
         heatSliders[2].value = 0;
         heatSliders[3].value = 0;
         heatSliders[4].value = 0;
+        levelStart = Time.time;
     }
 
     private Transform GetSpawn()
@@ -124,7 +127,7 @@ public class Heat : MonoBehaviour
         var correctedHeat = Mathf.Sqrt(Heat.HeatValue);
         timer.text = "Time Survived: " + Time.time.ToString("F2");
         abductees.text = "People abducted: " + AlienControl.Abductees;
-        PlayerPrefs.SetFloat("Time", Time.time);
+        PlayerPrefs.SetFloat("Time", Time.time - levelStart);
         PlayerPrefs.SetInt("Abductees", AlienControl.Abductees);
         PlayerPrefs.SetFloat("Heat", Heat.HeatValue);
         health.value = _playerHealth.GetHealth() / 1000f;
