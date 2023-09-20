@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
-  turnSpeed: 1
-  attackDist: 4
+  turnSpeed: 3
+  attackDist: 6
   projectile: {fileID: 5448471119693847778, guid: db3ed28f62dbddb42ac7109596fde2cd,
     type: 3}
   fireRate: 0.5

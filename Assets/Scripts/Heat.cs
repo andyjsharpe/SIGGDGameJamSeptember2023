@@ -35,7 +35,7 @@ public class Heat : MonoBehaviour
         _player.position = GetSpawn().position;
         _playerHealth = _player.GetComponent<Health>();
         StartCoroutine(nameof(SpawnThings));
-        Heat.HeatValue = 16;
+        Heat.HeatValue = 0;
         heatSliders[0].value = 0;
         heatSliders[1].value = 0;
         heatSliders[2].value = 0;
@@ -139,7 +139,7 @@ public class Heat : MonoBehaviour
         abductees.text = "People abducted: " + AlienControl.Abductees;
         PlayerPrefs.SetFloat("Time", Time.time - levelStart);
         PlayerPrefs.SetInt("Abductees", AlienControl.Abductees);
-        PlayerPrefs.SetFloat("Heat", Heat.HeatValue);
+        PlayerPrefs.SetFloat("Heat", correctedHeat);
         health.value = _playerHealth.GetHealth() / 1000f;
         
         heatSliders[0].value = Mathf.Max(0, Mathf.Min(1, correctedHeat));

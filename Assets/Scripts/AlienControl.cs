@@ -33,7 +33,7 @@ public class AlienControl : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        _rigid.AddForce(_dir * force);
+        _rigid.AddForce(force*force*Time.deltaTime*_dir);
         TryFire();
         TryAbduct();
         Health.Damage(-Time.deltaTime);

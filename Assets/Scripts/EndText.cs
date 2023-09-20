@@ -12,6 +12,6 @@ public class EndText : MonoBehaviour
     {
         timer.text = "Time Survived: " + PlayerPrefs.GetFloat("Time").ToString("F2");
         abductees.text = "People abducted: " + PlayerPrefs.GetInt("Abductees");
-        heat.text = "Heat Reached: " + PlayerPrefs.GetFloat("Heat").ToString("F2");
+        heat.text = "Notoriety Reached: " + PlayerPrefs.GetFloat("Heat").ToString("F2");
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 
 public class GridInitiator : MonoBehaviour
 {
+    /*
     [SerializeField] private Sprite[] roadSprites;
 
     [SerializeField] private GameObject[] car;
@@ -13,7 +14,7 @@ public class GridInitiator : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        /*
+
         var tilemap = GetComponentInChildren<Tilemap>();
         tilemap.ResizeBounds();
         var bounds = tilemap.localBounds;
@@ -38,10 +39,9 @@ public class GridInitiator : MonoBehaviour
                 }
             }
         }
-        */
+
     }
 
-    /*
     private void MakeCar(Vector3 pos)
     {
         if (Random.value > 0.9f)
