@@ -134,18 +134,25 @@ public class Heat : MonoBehaviour
 
     private void Update()
     {
+        var abducted = AlienControl.Abductees;
+        PlayerPrefs.SetInt("Abductees", abducted);
+        abductees.text = "People abducted: " + abducted;
+        
+        var timeElapsed = Time.time - levelStart;
+        PlayerPrefs.SetFloat("Time", timeElapsed);
+        timer.text = "Time Survived: " + timeElapsed.ToString("F2");
+        
         var correctedHeat = Mathf.Sqrt(Heat.HeatValue);
-        timer.text = "Time Survived: " + Time.time.ToString("F2");
-        abductees.text = "People abducted: " + AlienControl.Abductees;
-        PlayerPrefs.SetFloat("Time", Time.time - levelStart);
-        PlayerPrefs.SetInt("Abductees", AlienControl.Abductees);
         PlayerPrefs.SetFloat("Heat", correctedHeat);
-        health.value = _playerHealth.GetHealth() / 1000f;
         
         heatSliders[0].value = Mathf.Max(0, Mathf.Min(1, correctedHeat));
         heatSliders[1].value = Mathf.Max(0, Mathf.Min(2, correctedHeat) - 1);
         heatSliders[2].value = Mathf.Max(0, Mathf.Min(3, correctedHeat) - 2);
         heatSliders[3].value = Mathf.Max(0, Mathf.Min(4, correctedHeat) - 3);
         heatSliders[4].value = Mathf.Max(0, Mathf.Min(5, correctedHeat) - 4);
+        
+        PlayerPrefs.SetFloat("Score", timeElapsed * abducted);
+        
+        health.value = _playerHealth.GetHealth() / 1000f;
     }
 }

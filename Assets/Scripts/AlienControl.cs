@@ -28,6 +28,7 @@ public class AlienControl : MonoBehaviour
         _cam = GetComponentInChildren<Camera>();
         beamLight.enabled = false;
         Health = GetComponent<Health>();
+        AlienControl.Abductees = 0;
     }
 
     // Update is called once per frame
